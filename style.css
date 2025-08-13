@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    text-align: center;
+    width: 360px;
+    position: relative;
+}
+
+/* Logo no topo */
+.logo {
+    display: block;
+    margin: 0 auto 15px auto;
+    max-width: 120px;
+    height: auto;
+}
+
+/* Switch flutuante com sombra */
+.switch {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    z-index: 10;
+    background: white;
+    padding: 6px 10px;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.switch input {display:none;}
+.slider {
+    position: relative;
+    cursor: pointer;
+    width: 60px;
+    height: 28px;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 28px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+input:checked + .slider { background-color: #4CAF50; }
+input:checked + .slider:before { transform: translateX(32px); }
+.slider.round { border-radius: 28px; }
+.switch-label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Área Avançada */
+.avancado { display: none; margin-bottom: 15px; }
+.opcoes { display: flex; justify-content: center; gap: 8px; margin-bottom: 10px; }
+.toggle-btn {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    background-color: #e0e0e0;
+    transition: 0.2s;
+    font-weight: bold;
+}
+.toggle-btn:hover {
+    opacity: 0.85;
+    transform: scale(1.05);
+}
+
+/* Estilo para botões de idade */
+.grupo-idade .toggle-btn {
+    border: 2px solid #ccc;
+    background-color: #fafafa;
+}
+.grupo-idade .toggle-btn.selecionado {
+    background-color: #4CAF50;
+    color: white;
+    border-color: #2e7d32;
+}
+
+/* Botão padrão "3" em destaque */
+.grupo-idade .toggle-btn[data-value="3"].selecionado {
+    background-color: #ff9800;
+    border-color: #e65100;
+    color: white;
+}
+
+/* Cores específicas para sexo */
+.grupo-sexo .toggle-btn[data-value="menino"] { background-color: #ADD8E6; }
+.grupo-sexo .toggle-btn[data-value="menina"] { background-color: #FFB6C1; }
+.grupo-sexo .toggle-btn.selecionado[data-value="menino"] { background-color: #1E90FF; }
+.grupo-sexo .toggle-btn.selecionado[data-value="menina"] { background-color: #FF1493; }
+
+/* Inputs e botão */
+input[type=number], button {
+    margin: 10px 0;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+button[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+button[type=submit]:hover { background-color: #45a049; }
+
+#resultado { margin-top: 15px; font-weight: bold; }

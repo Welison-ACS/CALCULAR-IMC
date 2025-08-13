@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de IMC Infantil</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Switch Modo Avançado (fixo no canto superior direito) -->
+    <label class="switch">
+        <input type="checkbox" id="modoAvancado">
+        <span class="slider round"></span>
+        <span class="switch-label">Avançado</span>
+    </label>
+
+<div class="container">
+    <!-- Logo -->
+    <img src="logo.png" alt="Logo" class="logo">
+
+    <h1>Calculadora de IMC Infantil</h1>
+
+    <!-- Área Avançada -->
+    <div id="avancado" class="avancado">
+        <!-- Sexo -->
+        <div class="opcoes grupo-sexo">
+            <button type="button" class="toggle-btn" data-value="menino">Menino</button>
+            <button type="button" class="toggle-btn" data-value="menina">Menina</button>
+        </div>
+
+        <!-- Idade -->
+        <div class="opcoes grupo-idade">
+            <button type="button" class="toggle-btn idade-btn" data-value="0">0</button>
+            <button type="button" class="toggle-btn idade-btn" data-value="1">1</button>
+            <button type="button" class="toggle-btn idade-btn" data-value="2">2</button>
+            <button type="button" class="toggle-btn idade-btn selecionado" data-value="3">3</button>
+            <button type="button" class="toggle-btn idade-btn" data-value="4">4</button>
+            <button type="button" class="toggle-btn idade-btn" data-value="5">5</button>
+        </div>
+    </div>
+
+    <form id="imcForm">
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" step="0.1" required>
+
+        <label for="altura">Altura (cm):</label>
+        <input type="number" id="altura" step="0.1" required>
+
+        <button type="submit" id="calcular">Calcular IMC</button>
+    </form>
+
+    <div id="resultado"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
