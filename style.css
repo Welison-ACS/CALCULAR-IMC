@@ -87,7 +87,7 @@ input:checked + .slider:before { transform: translateX(32px); }
     transform: scale(1.05);
 }
 
-/* Estilo para botões de idade */
+/* Botões de idade */
 .grupo-idade .toggle-btn {
     border: 2px solid #ccc;
     background-color: #fafafa;
@@ -97,21 +97,36 @@ input:checked + .slider:before { transform: translateX(32px); }
     color: white;
     border-color: #2e7d32;
 }
-
-/* Botão padrão "3" em destaque */
 .grupo-idade .toggle-btn[data-value="3"].selecionado {
     background-color: #ff9800;
     border-color: #e65100;
     color: white;
 }
 
-/* Cores específicas para sexo */
+/* Sexo infantil */
 .grupo-sexo .toggle-btn[data-value="menino"] { background-color: #ADD8E6; }
 .grupo-sexo .toggle-btn[data-value="menina"] { background-color: #FFB6C1; }
 .grupo-sexo .toggle-btn.selecionado[data-value="menino"] { background-color: #1E90FF; }
 .grupo-sexo .toggle-btn.selecionado[data-value="menina"] { background-color: #FF1493; }
 
-/* Inputs e botão */
+/* Sexo adolescente/adulto */
+.grupo-sexo .toggle-btn[data-value="homem"] { background-color: #87CEFA; }
+.grupo-sexo .toggle-btn[data-value="mulher"] { background-color: #FF69B4; }
+.grupo-sexo .toggle-btn.selecionado[data-value="homem"] { background-color: #1E90FF; }
+.grupo-sexo .toggle-btn.selecionado[data-value="mulher"] { background-color: #FF1493; }
+
+/* Faixa etária */
+.grupo-faixa .toggle-btn {
+    border: 2px solid #ccc;
+    background-color: #fafafa;
+}
+.grupo-faixa .toggle-btn.selecionado {
+    background-color: #4CAF50;
+    color: white;
+    border-color: #2e7d32;
+}
+
+/* Inputs e botão principal */
 input[type=number], button {
     margin: 10px 0;
     padding: 8px;

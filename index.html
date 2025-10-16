@@ -3,11 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Calculadora de IMC Infantil</title>
+<title>Calculadora de IMC</title>
 <link rel="stylesheet" href="style.css">
+
+<!-- Manifest PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#4CAF50">
 </head>
 <body>
-    <!-- Switch Modo Avançado (fixo no canto superior direito) -->
+    <!-- Switch Modo Avançado -->
     <label class="switch">
         <input type="checkbox" id="modoAvancado">
         <span class="slider round"></span>
@@ -15,27 +19,33 @@
     </label>
 
 <div class="container">
-    <!-- Logo -->
     <img src="logo.png" alt="Logo" class="logo">
-
-    <h1>Calculadora de IMC Infantil</h1>
+    <h1>Calculadora de IMC</h1>
 
     <!-- Área Avançada -->
     <div id="avancado" class="avancado">
+
         <!-- Sexo -->
-        <div class="opcoes grupo-sexo">
+        <div class="opcoes grupo-sexo" id="grupoSexo">
             <button type="button" class="toggle-btn" data-value="menino">Menino</button>
             <button type="button" class="toggle-btn" data-value="menina">Menina</button>
         </div>
 
-        <!-- Idade -->
-        <div class="opcoes grupo-idade">
+        <!-- Idade específica (anos) -->
+        <div class="opcoes grupo-idade" id="grupoIdade">
             <button type="button" class="toggle-btn idade-btn" data-value="0">0</button>
             <button type="button" class="toggle-btn idade-btn" data-value="1">1</button>
             <button type="button" class="toggle-btn idade-btn" data-value="2">2</button>
             <button type="button" class="toggle-btn idade-btn selecionado" data-value="3">3</button>
             <button type="button" class="toggle-btn idade-btn" data-value="4">4</button>
             <button type="button" class="toggle-btn idade-btn" data-value="5">5</button>
+        </div>
+
+        <!-- Faixa etária: Criança, Adolescente, Adulto -->
+        <div class="opcoes grupo-faixa" id="grupoFaixa">
+            <button type="button" class="toggle-btn faixa-btn selecionado" data-value="crianca">Criança</button>
+            <button type="button" class="toggle-btn faixa-btn" data-value="adolescente">Adolescente</button>
+            <button type="button" class="toggle-btn faixa-btn" data-value="adulto">Adulto</button>
         </div>
     </div>
 
