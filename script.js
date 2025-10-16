@@ -64,6 +64,13 @@ faixaBtns.forEach(btn => {
 form.addEventListener('submit', function(e) {
     e.preventDefault();
 
+    // Checa se uma faixa etária foi selecionada
+    let faixaSelecionada = document.querySelector('.grupo-faixa .selecionado')?.dataset.value;
+    if (!faixaSelecionada) {
+        resultado.textContent = 'Por favor, selecione a faixa etária!';
+        return; // interrompe o cálculo
+    }
+
     const peso = parseFloat(document.getElementById('peso').value);
     const alturaCm = parseFloat(document.getElementById('altura').value);
 
@@ -72,8 +79,9 @@ form.addEventListener('submit', function(e) {
         const imc = peso / (altura * altura);
         let categoria = '';
 
-        let faixa = document.querySelector('.grupo-faixa .selecionado')?.dataset.value || 'crianca';
+        let faixa = faixaSelecionada;
 
+        // Categorias do IMC
         if (faixa === 'adulto') {
             if (imc < 18.5) {
                 categoria = 'Abaixo do peso';
@@ -94,6 +102,7 @@ form.addEventListener('submit', function(e) {
             categoria = 'IMC infantil';
         }
 
+        // Informações adicionais modo avançado
         let infoExtra = '';
         if (modoAvancado.checked) {
             const sexo = document.querySelector('.grupo-sexo .selecionado')?.dataset.value || 'não selecionado';
@@ -105,6 +114,7 @@ form.addEventListener('submit', function(e) {
 
         resultado.textContent = `IMC: ${imc.toFixed(2)} - ${categoria}${infoExtra}`;
 
+        // Botão Novo cálculo
         botao.textContent = 'Novo cálculo';
         botao.removeEventListener('click', resetar);
         botao.addEventListener('click', resetar);
